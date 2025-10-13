@@ -19,7 +19,7 @@
   Powered by [CodeMirror](https://codemirror.net/), you can write and edit *HTML*, *CSS*, and *JavaScript* — with real-time preview.
 
 - 🖥️ $\color{green}\text{Live Preview}$
-- 
+
   As you type in the code editor, your HTML is rendered immediately.
 
 - 📤 $\color{green}\text{Export Options}$
@@ -29,7 +29,7 @@
   * **New Project** – Reset everything to start fresh.
 
 - 🎛️ $\color{green}\text{Resizable Interface}$
-- 
+  
   Drag dividers to resize the editor, chat, and preview panels vertically or horizontally.
 
 ---
