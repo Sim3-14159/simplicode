@@ -7,7 +7,7 @@
 > **SIMpliCode** is a work in progress, and is not finished yet. Therefore, some features may not work yet.
 
 
-**SIMpliCode** is an and interactive **web-based coding assistant**, designed for writing, testing, and getting live AI help with *HTML*, *CSS*, and *JavaScript* projects. You can export your code and chats. In the codespace, you and AI can work together at the same time, on the same code.
+**SIMpliCode** is an and interactive **web-based coding assistant**, designed for writing, testing, and getting live AI help with *HTML*, *CSS*, and *JavaScript* projects. You can export your code and chats. In the codespace, you and AI can work together at the same time, on the same code. <mark>You can see the website [here](https://Sim3-14159.github.io/simplicode).</mark>
 
 ---
 
