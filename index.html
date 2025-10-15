@@ -38,6 +38,23 @@ body {
   align-items: flex-start;
 }
 
+navbar {
+background-color: #333;
+padding-left: 5px;
+padding-top: 1px;
+}
+
+navbar button {
+border-radius: 2px;
+background-color: #888;
+border: 3px outset #999;
+}
+
+navbar button:hover {
+background-color: #999;
+border-top: 3px outset #365;
+}
+
 .main-container {
   width: 100%;
   height: calc(100vh - 40px); /* full viewport height minus body padding */
@@ -87,7 +104,7 @@ body {
 /* Chat and editor containers take equal width initially */
 .chat-container,
 .editor-container {
-  flex: 1 1 50%;
+  flex: 1 1 48.4%; // CHANGE TO 50%
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -477,9 +494,18 @@ color: #293332;
     <span>Options</span>
   </div>
   <div class="sidebar-content">
-<button id="save" onclick=""><img src="https://img.icons8.com/?size=100&id=38113&format=png" class="sidebar-img"> <span>New Project</span></button>
-           <button id="download"  onclick="downloadChat()"><img src="https://img.icons8.com/?size=100&id=2945&format=png" class="sidebar-img"> <span>Save Chat</span></button>
-           <button id="save" onclick="downloadCode()"><img src="https://img.icons8.com/?size=100&id=18764&format=png" class="sidebar-img"> <span>Download Code</span></button>
+
+<span style="float: right;">Chat</span>
+<button id="clear-chat"><img src="https://img.icons8.com/?size=100&id=7703&format=png" class="sidebar-img"> <span>Clear Chat</span></button>
+
+           <button id="download"  onclick="downloadChat()"><img src="https://img.icons8.com/?size=100&id=18764&format=png" class="sidebar-img"> <span>Save Chat</span></button>
+
+           <button id="import-chat"><img src="https://img.icons8.com/?size=100&id=8301&format=png" class="sidebar-img"> <span>Import Chat</span></button><br><br>
+
+<span style="float: right;">Code</span>
+<button id="save" onclick="downloadCode()"><img src="https://img.icons8.com/?size=100&id=2945&format=png" class="sidebar-img"> <span>Download Code</span></button>
+
+<button id="import-code"><img src="https://img.icons8.com/?size=100&id=RljciFZGONCD&format=png" class="sidebar-img"> <span>Import Code</span></button>
 
   </div>
 </aside>
@@ -503,6 +529,7 @@ color: #293332;
       <div class="divider-horizontal" id="horizontalDivider"></div>
       
       <div class="editor-container" id="editorContainer">
+        <navbar><button>index.html</button><button>style.css</button><button style="float: right;">+</button></navbar>
         <textarea id="codespace"></textarea>
       </div>
     </div>
@@ -631,9 +658,9 @@ color: #293332;
       let chatPercentage = (relativeX / containerWidth) * 100;
       chatPercentage = Math.max(25, Math.min(75, chatPercentage));
 
-      chatContainer.style.flex = `0 0 ${chatPercentage}%`;
-      editorContainer.style.flex = `0 0 ${100 - chatPercentage}%`;
-    }
+      chatContainer.style.flex = `0 0 ${chatPercentage}%`; 
+      editorContainer.style.flex = `0 0 ${96.8 - chatPercentage}%`;
+    } 
 
     if (isResizingVertical) {
       const containerRect = document.querySelector('.main-container').getBoundingClientRect();
@@ -708,25 +735,10 @@ color: #293332;
     const newHeight = Math.max(300, lineCount * 24 + 50);
     cm.setSize(null, (newHeight - 110) + 'px');
     document.getElementById("fill").srcdoc = codeMirror.getValue();
+    saveData();
   });
 
-  codeMirror.setValue(`<!--Welcome to the codespace! Write your code here and the AI will be able to help you with it! This is some example HTML to get you started.-->
-<!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <title>Basic Example</title>
-    <style>
-      /* Put your styles here. */
-    </style>
-  </head>
-  <body>
-    <h1>Basic Example</h1>
-    <p>This is a paragraph of words in the basic example</p>
-      <script>
-        /*Any JavaScript you create will go here*/
-      </s\cript>
-  </body>
-</html>`);
+loadData();
 
 document.getElementById('send').addEventListener('click', () => {
     const input = document.getElementById('input');
@@ -842,6 +854,36 @@ function escapeRtf(text) {
 
   return rtf;
 }
-</script>
+
+// Save data to localStorage
+    function saveData() {
+      const input = codeMirror.getValue();
+      localStorage.setItem('myData', input);
+    }
+
+    // Load data from localStorage
+    function loadData() {
+      const storedData = localStorage.getItem('myData');
+      codeMirror.setValue(storedData ? storedData : `<!--Welcome to the codespace! Write your code here and the AI will be able to help you with it! This is some example HTML to get you started.-->
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Basic Example</title>
+    <style>
+      /* Put your styles here. */
+    </style>
+  </head>
+  <body>
+    <h1>Basic Example</h1>
+    <p>This is a paragraph of words in the basic example</p>
+      <script>
+        /*Any JavaScript you create will go here*/
+      </s\cript>
+  </body>
+</html>`);
+    }
+   
+  loadData();
+  </script>
 </body>
 </html>
