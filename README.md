@@ -3,11 +3,16 @@
 <h1> $$\color{blue}{\text{SIMpliCode}}$$ $$\color{red}{\text{<§>}}$$ </h1>
 </div>
 
+<div align="center">
+  
+<mark>**SIMpliCode** is an AI assisted *HTML* editor and website designer with import/export options, automatic save, and a live preview. You can export your code and chats. In the codespace, you and AI can work together at the same time, on the same code. You can see the website [here](https://Sim3-14159.github.io/simplicode).</mark>
+
+</div>
+
 > [!NOTE]
 > **SIMpliCode** is a work in progress, and is not finished yet. Therefore, some features may not work yet.
 
 
-**SIMpliCode** is an and interactive **web-based coding assistant**, designed for writing, testing, and getting live AI help with *HTML*, *CSS*, and *JavaScript* projects. You can export your code and chats. In the codespace, you and AI can work together at the same time, on the same code. <mark>You can see the website [here](https://Sim3-14159.github.io/simplicode).</mark>
 
 ---
 
@@ -21,19 +26,15 @@
   
   Powered by [CodeMirror](https://codemirror.net/), you can write and edit *HTML*, *CSS*, and *JavaScript* — with real-time preview.
 
-- 🖥️ $\color{green}\text{Live Preview}$
-
-  As you type in the code editor, your HTML is rendered immediately.
-
 - 📤 $\color{green}\text{Export Options}$
 
   * **Download Chat** – Export your conversation with the AI as a *rich text file*.
   * **Download Code** – Save your current HTML project as a file.
   * **New Project** – Reset everything to start fresh.
 
-- 🎛️ $\color{green}\text{Resizable Interface}$
+- 📥 $\color{green}\text{Auto Save}$
   
-  Drag dividers to resize the editor, chat, and preview panels vertically or horizontally.
+  Any code you write is automatically saved to your browsers local cache, so you don't need to worry if you forgot to export it.
 
 ---
 
