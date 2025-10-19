@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>SIMpliCode</title>
-  <!-- Modern browsers -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- Legacy fallback -->
-  <link rel="shortcut icon" href="favicon.ico">
-
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
@@ -26,7 +22,7 @@
 
 * {
   box-sizing: border-box;
-}
+} 
 
 body {
   margin: 0;
@@ -37,9 +33,6 @@ body {
   min-height: 100vh;
   user-select: none;
   line-height: 1.5;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 }
 
 navbar {
@@ -61,11 +54,12 @@ border-top: 3px outset #365;
 
 .main-container {
   width: 100%;
-  height: calc(100vh - 40px); /* full viewport height minus body padding */
+  min-height: calc(100vh - 40px); /* allow growth beyond viewport */
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 
 /* Title at top */
 .title {
@@ -467,6 +461,19 @@ color: #293332;
 .sidebar-content button img {
   float: left;
 }
+
+.copyright {
+position: relative;
+color: #444; 
+font-family: 'Times'; 
+font-size: 0.3em; 
+padding: 0px; 
+margin-top: -10px; 
+margin-bottom: -10px; 
+height: 0px;
+transition: 0.3s ease;
+width: fit-content;
+}
   </style>
 
   <!-- Marked.js for Markdown parsing -->
@@ -533,6 +540,7 @@ color: #293332;
       <div class="divider-horizontal" id="horizontalDivider"></div>
       
       <div class="editor-container" id="editorContainer">
+        <nav><button>Find</button><button>Replace</button><button>Comment</button><button>Reload Page</button></nav>
         <navbar><button>index.html</button><button>style.css</button><button style="float: right;">+</button></navbar>
         <textarea id="codespace"></textarea>
       </div>
@@ -541,6 +549,11 @@ color: #293332;
     <div class="divider-vertical" id="verticalDivider"></div>
     
     <iframe srcdoc="" id="fill" class="preview-container"></iframe>
+  
+ 
+     <footer class="copyright">
+      Copyright &copy; 2025 Sim3-14159. Icons by Icons8.
+    </footer>
   </div>
 
    <script src="https://orpheus-ai.onrender.com/wizard_orpheus.js"></script>
@@ -870,7 +883,7 @@ function escapeRtf(text) {
       const storedData = localStorage.getItem('myData');
       codeMirror.setValue(storedData ? storedData : `<!--Welcome to the codespace! Write your code here and the AI will be able to help you with it! This is some example HTML to get you started.-->
 <!DOCTYPE html>
-<html lang='en'>
+<htmllang='en'>
   <head>
     <title>Basic Example</title>
     <style>
