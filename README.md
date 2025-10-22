@@ -1,6 +1,8 @@
 
 <div align="center">
-<h1> $$\color{blue}{\text{SIMpliCode}}$$ $$\color{red}{\text{<§>}}$$ </h1>
+<h1> $$\color{blue}{\text{SIMpliCode}}$$ <br> 
+  
+  [ <img src="https://sim3-14159.github.io/simplicode/favicon.ico" width="70px"></h1> ](https://sim3-14159.github.io/simplicode)
 </div>
 
 <div align="center">
@@ -9,9 +11,9 @@
 
 </div>
 
+
 > [!NOTE]
 > **SIMpliCode** is a work in progress, and is not finished yet. Therefore, some features may not work yet.
-
 
 <p align="right">
   <img src="https://img.shields.io/badge/license-MIT-%233E687A" alt="Project License Badge">
