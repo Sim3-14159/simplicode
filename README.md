@@ -13,6 +13,17 @@
 > **SIMpliCode** is a work in progress, and is not finished yet. Therefore, some features may not work yet.
 
 
+<p align="right">
+  <img src="https://img.shields.io/badge/license-MIT-%233E687A" alt="Project License Badge">
+</p>
+  
+<div align="right">
+  
+  ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+  ![JavaScript](https://img.shields.io/badge/markdown-%230A4A00.svg?style=for-the-badge&logo=markdown&logoColor=green)
+  ![HTML](https://img.shields.io/badge/HTML-%23123456.svg?style=for-the-badge&logo=html&logoColor=%23F7DF1E)
+   ![CSS](https://img.shields.io/badge/CSS-%2347133B.svg?style=for-the-badge&logo=css&logoColor=%23ffccdd)
+</div>
 
 ---
 
