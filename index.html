@@ -102,7 +102,7 @@ border-top: 3px outset #365;
 /* Chat and editor containers take equal width initially */
 .chat-container,
 .editor-container {
-  flex: 1 1 48.4%; // CHANGE TO 50%
+  flex: 1 1 48.4%; /* CHANGE TO 50% */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -311,7 +311,8 @@ border-top: 3px outset #365;
   height: calc(40vh - 8px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   flex-shrink: 0;
-  margin: 0;
+  margin-top: 0px;
+  margin-bottom: 10px;
   overflow: hidden;
 }
 
@@ -400,13 +401,13 @@ width: 1em;
   top: 0;
   right: 0;
   height: 100vh;
-  width: 260px;
+  width: min(30vw, 300px);
   background: var(--bg-secondary);
   color: var(--text-primary);
   box-shadow: -2px 0 8px rgba(0,0,0,.4);
   transform: translateX(100%);
-  transition: transform .25s ease;
-  z-index: 1000;
+  transition: transform .29s ease;
+  z-index: 1000; 
   display: flex;
   flex-direction: column;
 }
@@ -474,6 +475,66 @@ height: 0px;
 transition: 0.3s ease;
 width: fit-content;
 }
+
+.tab {
+
+font-family: 'Times';
+/*
+background-color: grey;
+*/
+
+padding: 5px;
+margin-bottom: -20px;
+margin-right: 10px;
+margin-left: 10px;
+margin-top: -20px;
+
+font-size: 20px;
+line-height: 30px;
+text-align: bottom;
+
+
+border-bottom: 22px solid #555; /* Color and height of the trapezoid */
+border-left: 12px solid transparent; /* Left slope */
+border-right: 12px solid transparent; /* Right slope */
+height: 0; /* Important for the border trick */
+width: fit-content; /* Top width of the trapezoid */
+}
+
+.tab {
+color: black;
+}
+
+.tab button img {
+width: auto;
+height: 14px;
+float: bottom;
+margin-bottom: -1.2px;
+margin-right: -5px;
+}
+
+.tab span img {
+margin-right: 6px;
+margin-bottom: -2px;
+height: 0.9em;
+width: auto;
+margin-top: 6px;
+}
+
+.tab button img:hover {
+transform: scale(1.1);
+transform: rotate(360deg);
+transition: 0.3s ease;
+}
+
+.tab button {
+font-size: 20px;
+background: none;
+border: none;
+cursor: pointer;
+}
+
+
   </style>
 
   <!-- Marked.js for Markdown parsing -->
@@ -507,14 +568,15 @@ width: fit-content;
   <div class="sidebar-content">
 
 <span style="float: right;">Chat</span>
-<a href=''><button id="clear-chat"><img src="https://img.icons8.com/?size=100&id=7703&format=png" class="sidebar-img"> <span>Clear Chat</span></button></a>
 
-           <button id="download"  onclick="downloadChat()"><img src="https://img.icons8.com/?size=100&id=18764&format=png" class="sidebar-img"> <span>Save Chat</span></button>
+<a href=''><button id="clear-chat" title="Clear the chat and reload the page"><img src="https://img.icons8.com/?size=100&id=7703&format=png" class="sidebar-img"> <span>Clear Chat</span></button></a>
 
-           <button id="import-chat"><img src="https://img.icons8.com/?size=100&id=8301&format=png" class="sidebar-img"> <span>Import Chat</span></button><br><br>
+           <button id="download"  onclick="downloadChat()" title="Download the chat as an .rtf file"><img src="https://img.icons8.com/?size=100&id=18764&format=png" class="sidebar-img"> <span>Save Chat</span></button>
+
+           <button id="import-chat" title="Import a chat from file"><img src="https://img.icons8.com/?size=100&id=8301&format=png" class="sidebar-img"> <span>Import Chat</span></button><br><br>
 
 <span style="float: right;">Code</span>
-<button id="save" onclick="downloadCode()"><img src="https://img.icons8.com/?size=100&id=2945&format=png" class="sidebar-img"> <span>Download Code</span></button>
+<button id="save" onclick="downloadCode()" title="Download the HTML"><img src="https://img.icons8.com/?size=100&id=2945&format=png" class="sidebar-img"> <span>Download Code</span></button>
 
 <button id="import-code"><img src="https://img.icons8.com/?size=100&id=RljciFZGONCD&format=png" class="sidebar-img"> <span>Import Code</span></button>
 
@@ -532,8 +594,8 @@ width: fit-content;
         </div>
         <textarea id="input" placeholder="// How can I help with your code?"></textarea>
         <span>
-           <button class="chat-button-left" id="attach"><img src="https://img.icons8.com/50/attach" class="chat-img"></button></button>
-           <button class="chat-button-right" id="send"><img src="https://img.icons8.com/50/up" class="chat-img"></button>
+           <button class="chat-button-left" id="attach" title="Attach a File"><img src="https://img.icons8.com/50/attach" class="chat-img"></button></button>
+           <button class="chat-button-right" id="send" title="Send Message"><img src="https://img.icons8.com/50/up" class="chat-img"></button>
         </span>
       </div>
       
@@ -547,11 +609,21 @@ width: fit-content;
     </div>
     
     <div class="divider-vertical" id="verticalDivider"></div>
+
+    <nav class="tab">
+       <span>
+         <img id="favicon-img"><span id="preview-title">No Title</span>
+       </span>
+       <button title="Reload Preview" onclick="reloadPreview()">
+         <!--<img src="https://img.icons8.com/?size=100&id=90922&format=png&color=222222">-->
+         <img src="https://img.icons8.com/?size=100&id=12494&format=png&color=222222">
+       </button>
+</nav>
+      <iframe srcdoc="" id="fill" class="preview-container"></iframe>
     
-    <iframe srcdoc="" id="fill" class="preview-container"></iframe>
   
  
-     <footer class="copyright">
+     <footer class="copyright" title="Copyright &copy; 2025 Sim3-14159. Icons by Icons8.">
       Copyright &copy; 2025 Sim3-14159. Icons by Icons8.
     </footer>
   </div>
@@ -747,15 +819,56 @@ width: fit-content;
     viewportMargin: Infinity
   });
 
-  codeMirror.on('change', function(cm) {
+/*
+  codeMirror.on('change', function(cm) { 
     const lineCount = cm.lineCount();
     const newHeight = Math.max(300, lineCount * 24 + 50);
     cm.setSize(null, (newHeight - 110) + 'px');
-    document.getElementById("fill").srcdoc = codeMirror.getValue();
+
+    const iframe = document.getElementById("fill");
+    iframe.srcdoc = cm.getValue();
+    iframeTitle = iframe.contentDocument.title;
+    document.getElementById("preview-title").textContent = iframeTitle;
+
     saveData();
   });
+*/
+
+codeMirror.on('change', function(cm) { 
+   const lineCount = cm.lineCount();
+   const newHeight = Math.max(300, lineCount * 24 + 50);
+   cm.setSize(null, (newHeight - 110) + 'px');
+
+  const code = cm.getValue();
+  const iframe = document.getElementById("fill");
+  iframe.srcdoc = code;
+
+  iframe.onload = () => {
+    const iframeTitle = iframe.contentDocument.title || 'No Title';
+    document.getElementById("preview-title").textContent = iframeTitle;
+
+const doc = iframe.contentDocument;
+  const iconLink = doc.querySelector('link[rel~="icon"]');
+  
+  let faviconUrl;
+
+  if (iconLink) {
+    faviconUrl = new URL(iconLink.getAttribute('href'), doc.baseURI).href;
+  } else {
+    faviconUrl = new URL('/favicon.ico', doc.baseURI).href;
+  }
+
+  document.getElementById("favicon-img").src = faviconUrl;
+
+  };
+
+  saveData();
+});
+
 
 loadData();
+
+
 
 document.getElementById('send').addEventListener('click', () => {
     const input = document.getElementById('input');
@@ -883,7 +996,7 @@ function escapeRtf(text) {
       const storedData = localStorage.getItem('myData');
       codeMirror.setValue(storedData ? storedData : `<!--Welcome to the codespace! Write your code here and the AI will be able to help you with it! This is some example HTML to get you started.-->
 <!DOCTYPE html>
-<htmllang='en'>
+<html lang='en'>
   <head>
     <title>Basic Example</title>
     <style>
@@ -900,7 +1013,11 @@ function escapeRtf(text) {
 </html>`);
     }
    
-  loadData();
+//  loadData();
+
+function reloadPreview() {
+codeMirror.setValue(codeMirror.getValue());
+}
   </script>
 </body>
 </html>
