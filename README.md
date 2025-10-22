@@ -24,11 +24,11 @@
 
 - 💻 $\color{green}\text{Live Code Editor}$
   
-  Powered by [CodeMirror](https://codemirror.net/), you can write and edit *HTML*, *CSS*, and *JavaScript* — with real-time preview.
+  Powered by [CodeMirror](https://codemirror.net/), you can write and edit *HTML*, *CSS*, and *JavaScript* — with syntax highlighting, real-time preview, automatic indentation.
 
-- 📤 $\color{green}\text{Export Options}$
+- 📤 $\color{green}\text{Import/Export Options}$
 
-  * **Download Chat** – Export your conversation with the AI as a *rich text file*.
+  * **Download Chat** – Export your conversation with the AI as a *rich text file* (`.rtf`).
   * **Download Code** – Save your current HTML project as a file.
   * **New Project** – Reset everything to start fresh.
 
@@ -45,9 +45,10 @@ $\color{orange}\text{Libraries:}$
   - [CodeMirror](https://codemirror.net/) – Live code editing
   - [Marked.js](https://marked.js.org/) – Markdown parsing
   - [Highlight.js](https://highlightjs.org/) – Syntax highlighting in chat
+  - [Orphues AI](https://orpheus-ai.onrender.com) – Artificial intellegence
   
 $\color{orange}\text{CDN Assets:}$ 
-  - Icons from [icons8.com](https://icons8.com)
+  - Icons from [Icons8](https://icons8.com)
 
 ---
 
