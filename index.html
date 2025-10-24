@@ -1016,7 +1016,7 @@ function escapeRtf(text) {
 //  loadData();
 
 function reloadPreview() {
-codeMirror.setValue(codeMirror.getValue());
+previewContainer.srcdoc = codeMirror.getValue();
 }
   </script>
 </body>
