@@ -1,31 +1,42 @@
-
 <div align="center">
-<h1> $$\color{blue}{\text{SIMpliCode}}$$ <br> 
+<h1> $$\color{blue}{\text{SIMpliCode}}$$ </h1>
   
   [ <img src="https://sim3-14159.github.io/simplicode/favicon.ico" width="70px"></h1> ](https://sim3-14159.github.io/simplicode)
 </div>
 
-<div align="center">
+<hr>
+<p align="right">
+  <img src="https://img.shields.io/badge/license-MIT-%233E687A" alt="Project License Badge">
+</p>
+<div align="right">
+  
+  ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+  ![MarkDown](https://img.shields.io/badge/markdown-%230A4A00.svg?style=for-the-badge&logo=markdown&logoColor=green)
+  ![HTML](https://img.shields.io/badge/HTML-%23123456.svg?style=for-the-badge&logo=html&logoColor=%23F7DF1E)
+   ![CSS](https://img.shields.io/badge/CSS-%2347133B.svg?style=for-the-badge&logo=css&logoColor=%23ffccdd)
+</div>
+<div align="center"><hr>
   
 <mark>**SIMpliCode** is an AI assisted *HTML* editor and website designer with import/export options, automatic save, and a live preview. You can export your code and chats. In the codespace, you and AI can work together at the same time, on the same code. You can see the website [here](https://Sim3-14159.github.io/simplicode).</mark>
 
 </div>
 
 
-> [!NOTE]
-> **SIMpliCode** is a work in progress, and is not finished yet. Therefore, some features may not work yet.
 
-<p align="right">
-  <img src="https://img.shields.io/badge/license-MIT-%233E687A" alt="Project License Badge">
-</p>
-  
-<div align="right">
-  
-  ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-  ![JavaScript](https://img.shields.io/badge/markdown-%230A4A00.svg?style=for-the-badge&logo=markdown&logoColor=green)
-  ![HTML](https://img.shields.io/badge/HTML-%23123456.svg?style=for-the-badge&logo=html&logoColor=%23F7DF1E)
-   ![CSS](https://img.shields.io/badge/CSS-%2347133B.svg?style=for-the-badge&logo=css&logoColor=%23ffccdd)
-</div>
+
+> [!IMPORTANT]
+> **SIMpliCode** is a work in progress, and is not finished yet. Therefore, some features may not work yet:
+>
+>
+>> ### To Do:
+>> - [ ] Use better AI API
+>> - [ ] Add console.
+>> - [ ] Make all buttons in sidebar work
+>> - [ ] Change "New Chat" to "Reload Page"
+>> - [ ] Get **Find**, **Replace**, etc. to work
+>> - [ ] Remove unneccessary buttons above codespace
+>> - [ ] Let AI edit code in codespace directly
+>> - [x] Fix Code Mirror highlight color
 
 ---
 
