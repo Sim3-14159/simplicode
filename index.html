@@ -534,7 +534,19 @@ border: none;
 cursor: pointer;
 }
 
+#cursor-pos {
+  float: right;
+  font-family: monospace;
+  transform: scaleX(0.9);
+  transform-origin: right;
+  margin: 2px;
+  color: #E5E3AA;
+  cursor: default;
+}
 
+#cursor-pos:hover {
+  color: #f6f4bb;
+}
   </style>
 
   <!-- Marked.js for Markdown parsing -->
@@ -602,7 +614,7 @@ cursor: pointer;
       <div class="divider-horizontal" id="horizontalDivider"></div>
       
       <div class="editor-container" id="editorContainer">
-        <nav><button>Find</button><button>Replace</button><button>Comment</button><button>Reload Page</button></nav>
+        <nav><button>Find</button><button>Replace</button><button>Comment</button><button>Reload Page</button><span id="cursor-pos">15:5</span></nav>
         <navbar><button>index.html</button><button>style.css</button><button style="float: right;">+</button></navbar>
         <textarea id="codespace"></textarea>
       </div>
@@ -819,20 +831,11 @@ cursor: pointer;
     viewportMargin: Infinity
   });
 
-/*
-  codeMirror.on('change', function(cm) { 
-    const lineCount = cm.lineCount();
-    const newHeight = Math.max(300, lineCount * 24 + 50);
-    cm.setSize(null, (newHeight - 110) + 'px');
 
-    const iframe = document.getElementById("fill");
-    iframe.srcdoc = cm.getValue();
-    iframeTitle = iframe.contentDocument.title;
-    document.getElementById("preview-title").textContent = iframeTitle;
-
-    saveData();
-  });
-*/
+codeMirror.on("cursorActivity", function(instance) {
+  const cursor = instance.doc.getCursor();
+  document.getElementById("cursor-pos").textContent = cursor.line + ":" + cursor.ch;
+});
 
 codeMirror.on('change', function(cm) { 
    const lineCount = cm.lineCount();
