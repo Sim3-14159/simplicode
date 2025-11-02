@@ -834,7 +834,7 @@ cursor: pointer;
 
 codeMirror.on("cursorActivity", function(instance) {
   const cursor = instance.doc.getCursor();
-  document.getElementById("cursor-pos").textContent = cursor.line + ":" + cursor.ch;
+  document.getElementById("cursor-pos").textContent = (cursor.line + 1) + ":" + (cursor.ch + 1); // + 1 is to account for zero-based index
 });
 
 codeMirror.on('change', function(cm) { 
