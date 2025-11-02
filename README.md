@@ -29,15 +29,17 @@
 >
 >
 >> ### To Do:
+>> - [ ] Get **Settings** button to work
 >> - [ ] Use better AI API
 >> - [ ] Add console.
 >> - [ ] Make all buttons in sidebar work
->> - [ ] Change "New Chat" to "Reload Page"
->> - [ ] Remove unneccessary buttons above codespace
+>> - [ ] Get ~~**Find**, **Replace**, etc.~~ buttons above codespace to work
+>> - [ ] Add char count.
 >> - [ ] Let AI edit code in codespace directly
 >> - [x] Fix Code Mirror highlight color
 >> - [x] Add cursor position and line number status.
->> - [x] Get **Find**, **Replace**, etc. to work
+>> - [x] Change "New Chat" to "Reload Page"
+>> - [x] Remove unneccessary buttons above codespace
 
 ---
 
