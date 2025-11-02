@@ -534,6 +534,25 @@ border: none;
 cursor: pointer;
 }
 
+.actions {
+padding: 0px;
+}
+
+.actions button img {
+  height: 1em;
+  margin-bottom: -1.5px;
+}
+
+.actions button {
+  border-radius: 1em;
+  border: 2px inset pink;
+  background-color: pink;
+  margin-left: 1px;
+  height: fit-content;
+  width: fit-content;
+  cursor: context-menu;
+}
+
 #cursor-pos {
   float: right;
   font-family: monospace;
@@ -619,7 +638,14 @@ cursor: pointer;
       <div class="divider-horizontal" id="horizontalDivider"></div>
       
       <div class="editor-container" id="editorContainer">
-        <nav><button>Find</button><button>Replace</button><button>Comment</button><button>Reload Page</button><span id="cursor-pos">15:5</span></nav>
+        <nav class="actions"><button title="Find"><img src="https://img.icons8.com/ios-filled/search"></button><button title="Replace"><img src="https://img.icons8.com/ios-filled/swap"></button><button title="Comment">&lt;!--</button><button title="Undo" onclick="codeMirror.undo()"><img src="https://img.icons8.com/ios-filled/undo"></button><button title="Redo" onclick="codeMirror.redo()"><img src="https://img.icons8.com/ios-filled/redo"></button>
+
+
+<button title="Automatically indent everything perfectly" onclick='codeMirror.execCommand("selectAll"); codeMirror.execCommand("indentAuto"); codeMirror.setSelection(codeMirror.getCursor());'><img src="https://img.icons8.com/ios-filled/sparkles"></button>
+
+
+<span id="cursor-pos"></span></nav>
+
         <navbar><button>index.html</button><button>style.css</button><button style="float: right;">+</button></navbar>
         <textarea id="codespace"></textarea>
       </div>
@@ -833,7 +859,8 @@ cursor: pointer;
     indentUnit: 2,
     tabSize: 2,
     indentWithTabs: false,
-    viewportMargin: Infinity
+    viewportMargin: Infinity,
+    smartIndent: true
   });
 
 
