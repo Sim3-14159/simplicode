@@ -33,11 +33,11 @@
 >> - [ ] Add console.
 >> - [ ] Make all buttons in sidebar work
 >> - [ ] Change "New Chat" to "Reload Page"
->> - [ ] Get **Find**, **Replace**, etc. to work
 >> - [ ] Remove unneccessary buttons above codespace
 >> - [ ] Let AI edit code in codespace directly
 >> - [x] Fix Code Mirror highlight color
 >> - [x] Add cursor position and line number status.
+>> - [x] Get **Find**, **Replace**, etc. to work
 
 ---
 
