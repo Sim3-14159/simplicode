@@ -600,7 +600,9 @@ padding: 0px;
 
 <span style="float: right;">General</span>
 
-<button id="settings-button" title="Open SIMpliCode settings"><img src="https://img.icons8.com/?size=100&id=2969&format=png" class="sidebar-img"><span>Settings</span></button><br><br>
+<button id="settings-button" title="Open SIMpliCode settings"><img src="https://img.icons8.com/?size=100&id=2969&format=png" class="sidebar-img"><span>Settings</span></button>
+
+<button id="help-button" title="How to use SIMpliCode"><img src="https://img.icons8.com/ios-filled/help" class="sidebar-img"><span>Help</span></button><br><br>
 
 <span style="float: right;">Chat</span>
 
@@ -614,7 +616,7 @@ padding: 0px;
 <span style="float: right;">Code</span>
 <button id="save" onclick="downloadCode()" title="Download the HTML"><img src="https://img.icons8.com/?size=100&id=2945&format=png" class="sidebar-img"> <span>Download Code</span></button>
 
-<button id="import-code"><img src="https://img.icons8.com/?size=100&id=RljciFZGONCD&format=png" class="sidebar-img"> <span>Import Code</span></button>
+<button id="import-code" title="Import the code from a file"><img src="https://img.icons8.com/?size=100&id=RljciFZGONCD&format=png" class="sidebar-img"> <span>Import Code</span></button>
 
   </div>
 </aside>
@@ -890,7 +892,7 @@ const doc = iframe.contentDocument;
   if (iconLink) {
     faviconUrl = new URL(iconLink.getAttribute('href'), doc.baseURI).href;
   } else {
-    faviconUrl = new URL('/favicon.ico', doc.baseURI).href;
+    faviconUrl = new URL('./favicon.ico', doc.baseURI).href;
   }
 
   document.getElementById("favicon-img").src = faviconUrl;
@@ -1032,6 +1034,7 @@ function escapeRtf(text) {
       codeMirror.setValue(storedData ? storedData : `<!--Welcome to the codespace! Write your code here and the AI will be able to help you with it! This is some example HTML to get you started.-->
 <!DOCTYPE html>
 <html lang='en'>
+<meta charset="UTF-8">
   <head>
     <title>Basic Example</title>
     <style>
