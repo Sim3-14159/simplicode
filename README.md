@@ -12,7 +12,7 @@
   
   ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
   ![MarkDown](https://img.shields.io/badge/markdown-%230A4A00.svg?style=for-the-badge&logo=markdown&logoColor=green)
-  ![HTML](https://img.shields.io/badge/HTML-%23123456.svg?style=for-the-badge&logo=html&logoColor=%23F7DF1E)
+  ![HTML](https://img.shields.io/badge/HTML-%23123456.svg?style=for-the-badge&logo=html5&logoColor=%2399bbff)
    ![CSS](https://img.shields.io/badge/CSS-%2347133B.svg?style=for-the-badge&logo=css&logoColor=%23ffccdd)
 </div>
 <div align="center"><hr>
