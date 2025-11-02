@@ -37,6 +37,7 @@
 >> - [ ] Remove unneccessary buttons above codespace
 >> - [ ] Let AI edit code in codespace directly
 >> - [x] Fix Code Mirror highlight color
+>> - [x] Add cursor position and line number status.
 
 ---
 
