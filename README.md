@@ -40,6 +40,7 @@
 >> - [x] Add cursor position and line number status.
 >> - [x] Change "New Chat" to "Reload Page"
 >> - [x] Remove unneccessary buttons above codespace
+>> - [x] Sanitize output from AI
 
 ---
 
