@@ -553,19 +553,53 @@ padding: 0px;
   cursor: context-menu;
 }
 
-#cursor-pos {
+.code-count {
   float: right;
   font-family: monospace;
+  font-size: 0.9em;
   transform: scaleX(0.9);
-  transform-origin: right;
+  transform-origin: center;
   margin: 2px;
   color: #E5E3AA;
   cursor: default;
 }
 
-#cursor-pos:hover {
+.code-count:hover {
   color: #f6f4bb;
 }
+
+.popup-overlay {
+    font-family: "Arial", sans-serif;
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .goodButton {
+    background-color: #47f;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .fineButton {
+    background-color: grey;
+    border-radius: 5px;
+    border: none;
+  }
   </style>
 
   <!-- Marked.js for Markdown parsing -->
@@ -615,7 +649,7 @@ padding: 0px;
            <button id="import-chat" title="Import a chat from file"><img src="https://img.icons8.com/?size=100&id=8301&format=png" class="sidebar-img"> <span>Import Chat</span></button><br><br>
 
 <span style="float: right;">Code</span>
-<button id="save" onclick="downloadCode()" title="Download the HTML"><img src="https://img.icons8.com/?size=100&id=2945&format=png" class="sidebar-img"> <span>Download Code</span></button>
+<button id="save" onclick="openPopup()" title="Download the HTML"><img src="https://img.icons8.com/?size=100&id=2945&format=png" class="sidebar-img"> <span>Download Code</span></button>
 
 <button id="import-code" title="Import the code from a file"><img src="https://img.icons8.com/?size=100&id=RljciFZGONCD&format=png" class="sidebar-img"> <span>Import Code</span></button>
 
@@ -641,13 +675,10 @@ padding: 0px;
       <div class="divider-horizontal" id="horizontalDivider"></div>
       
       <div class="editor-container" id="editorContainer">
-        <nav class="actions"><button title="Find"><img src="https://img.icons8.com/ios-filled/search"></button><button title="Replace"><img src="https://img.icons8.com/ios-filled/swap"></button><button title="Comment"><img src="https://img.icons8.com/?size=100&id=37966&format=png"></button><button title="Undo" onclick="codeMirror.undo()"><img src="https://img.icons8.com/ios-filled/undo"></button><button title="Redo" onclick="codeMirror.redo()"><img src="https://img.icons8.com/ios-filled/redo"></button>
+        <nav class="actions"><button title="Find"><img src="https://img.icons8.com/ios-filled/search"></button><button title="Replace"><img src="https://img.icons8.com/ios-filled/swap"></button><button title="Comment"><img src="https://img.icons8.com/?size=100&id=37966&format=png"></button><button title="Undo" onclick="codeMirror.undo()"><img src="https://img.icons8.com/ios-filled/undo"></button><button title="Redo" onclick="codeMirror.redo()"><img src="https://img.icons8.com/ios-filled/redo"></button><button title="Automatically indent everything perfectly" onclick='codeMirror.execCommand("selectAll"); codeMirror.execCommand("indentAuto"); codeMirror.setSelection(codeMirror.getCursor());'><img src="https://img.icons8.com/?size=100&id=8068&format=png"></button>
 
 
-<button title="Automatically indent everything perfectly" onclick='codeMirror.execCommand("selectAll"); codeMirror.execCommand("indentAuto"); codeMirror.setSelection(codeMirror.getCursor());'><img src="https://img.icons8.com/?size=100&id=8068&format=png"></button>
-
-
-<span id="cursor-pos"></span></nav>
+<span id="cursor-pos" class="code-count"></span><span class="code-count">|</span><span id="chr-count" class="code-count"></span><span class="code-count">•</span><span id="line-num" class="code-count">289 lines</span></nav>
 
         <navbar><button>index.html</button><button>style.css</button><button style="float: right;">+</button></navbar>
         <textarea id="codespace"></textarea>
@@ -672,6 +703,16 @@ padding: 0px;
      <footer class="copyright" title="Copyright &copy; 2025 Sim3-14159. Icons by Icons8.">
       Copyright &copy; 2025 Sim3-14159. Icons by Icons8.
     </footer>
+  </div>
+
+  <div id="popup" class="popup-overlay">
+    <div class="popup-content">
+      <h2>Download As</h2>
+      <input type="text" id="popup-input" placeholder="Enter a filename..." value="SIMpliCode.html" onclick="this.select();"><br><br>
+      <button onclick="closePopup()" class="fineButton">Cancel</button>
+      <button onclick="downloadCode()" class="goodButton">Download</button>
+      <p id="notificationMessage"></p>
+    </div>
   </div>
 
    <script src="https://orpheus-ai.onrender.com/wizard_orpheus.js"></script>
@@ -880,6 +921,10 @@ codeMirror.on('change', function(cm) {
   const code = cm.getValue();
   const iframe = document.getElementById("fill");
   iframe.srcdoc = code;
+  document.getElementById("chr-count").textContent = code.length + " chr";
+  document.getElementById("chr-count").title = code.length + " characters";
+  document.getElementById("line-num").textContent = lineCount + " ln";
+  document.getElementById("line-num").title = lineCount + " lines";
 
   iframe.onload = () => {
     const iframeTitle = iframe.contentDocument.title || 'No Title';
@@ -943,22 +988,35 @@ toggleBtn.addEventListener('click', () => {
   toggleBtn.style.transform = `rotate(${rotation}deg)`;
 });
 
+function openPopup() {
+  document.getElementById("popup").style.display = "flex";
+  document.getElementById("popup-input").value = localStorage.getItem("last-download-file-name") || "SIMpliCode.html";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+  document.getElementById("popup-input").value = ""; // Clear input
+  document.getElementById("notificationMessage").textContent = ""; // Clear notification
+}
 
 function downloadCode() {
-      const text = codeMirror.getValue().trim();
-      if (!text) {
-        alert("Empty code!");
-        return;
-      }
-      
-      const blob = new Blob([text], { type: 'text/html' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'SIMpleCode.html';
-      a.click();
-      URL.revokeObjectURL(url);
-    }
+  const text = codeMirror.getValue().trim();
+    if (!text) {
+      alert("Empty code!");
+      return;
+  }
+  
+  const blob = new Blob([text], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const inputArea = document.getElementById("popup-input");
+  a.href = url;
+  a.download = inputArea.value;
+  a.click();
+  URL.revokeObjectURL(url);
+  localStorage.setItem("last-download-file-name", inputArea.value);
+  closePopup();
+}
 
 
 function downloadChat() {
