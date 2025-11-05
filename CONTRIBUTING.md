@@ -19,7 +19,7 @@ Please read and follow the [Code of Conduct](./CODE_OF_CONDUCT.md). In short: be
 - If your idea is completely new, [create a new milestone](https://github.com/Sim3-14159/simplicode/milestones/new), describing what your goal is and possible steps to accomplish it.
 
 ## 📃 Documentation
-- Update `README.md` if your change affects user workflows.
+The documentation for **SIMpliCode** can be found in the [README](README.md) and will hopefully be accessible soon at [Sim3-14159.github.io/articles/simplicode-documentation](https://Sim3-14159.github.io/articles/simplicode-documentation) and in the `Help` section of [**SIMpliCode**](https://sim3-14159.github.io/simplicode)
 
-##❓Questions?
-Raise an issue addressed to **<u>@Sim3-14159</u>**
+## ❓Questions
+Raise an issue addressed to **@Sim3-14159**
