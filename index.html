@@ -766,7 +766,7 @@ padding: 0px;
       p.innerHTML = "Uh oh, it looks like you've reached your current limit. Please try again later.";
     } else {
       // Parse Markdown to HTML
-      const html = marked.parse(DOMPurify.sanitize(data.response));
+      const html = marked.parse(data.response); // todo: sanitize with DOMPurify
       p.innerHTML = html;
     }
   
