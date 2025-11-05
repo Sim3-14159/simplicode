@@ -28,19 +28,21 @@
 > **SIMpliCode** is a work in progress, and is not finished yet. Therefore, some features may not work yet:
 >
 >
->> ### To Do:
+>> #### To Do:
 >> - [ ] Get **Settings** button to work
+>> - [ ] Add fullscreen mode for console and preview
+>> - [ ] Make sure automatic indentation keeps the cursor in the same position
 >> - [ ] Use better AI API
->> - [ ] Add console.
+>> - [ ] Add console
 >> - [ ] Make all buttons in sidebar work
+>> - [ ] Sanitize output from AI 
 >> - [ ] Get ~~**Find**, **Replace**, etc.~~ buttons above codespace to work
 >> - [ ] Let AI edit code in codespace directly
 >> - [x] Fix Code Mirror highlight color
 >> - [x] Add cursor position and line number status.
 >> - [x] Change "New Chat" to "Reload Page"
 >> - [x] Remove unneccessary buttons above codespace
->> - [x] Sanitize output from AI
->> - [x] Add char count.
+>> - [x] Add char count
 
 ---
 
