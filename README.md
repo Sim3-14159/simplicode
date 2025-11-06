@@ -104,5 +104,14 @@ or, [click here](https://Sim3-14159.github.io/simplicode).
 
 ---
 
+## 🗂️ $\color{brown}\text{File Tree}$
+
+- [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=red) 
+- [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- [`LICENSE`](LICENSE)
+- [`README.md`](README.md)
+- [`favicon.ico`](favicon.ico)
+- [`index.html`](index.html)
+
 ## $\color{pink}\text{📝 License}$
 $\color{pink}\text{MIT}$ — feel free to use, modify, and share.
