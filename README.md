@@ -113,12 +113,14 @@ or, [click here](https://Sim3-14159.github.io/simplicode).
 
 <h2 id="file-tree"> 🗂️ $\color{brown}\text{File Tree}$ </h2>
 
-- ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=markdown&logoColor=yellow) [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
-- ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=markdown&logoColor=yellow) [`CONTRIBUTING.md`](CONTRIBUTING.md) 
-- ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=green) [`LICENSE`](LICENSE)  
-- ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme)  [`README.md`](README.md) 
-- ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=icon)  [`favicon.ico`](favicon.ico) 
-- ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=html5)  [`index.html`](index.html) 
+| Icon | Name | Description |
+|:---|:---|:-----|
+| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=markdown&logoColor=yellow) | [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | The code of conduct for contributing to **SIMpliCode** |
+| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=markdown&logoColor=yellow) | [`CONTRIBUTING.md`](CONTRIBUTING.md) | A guide to how to contribute |
+| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=green) | [`LICENSE`](LICENSE) | Copyright |
+| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme) | [`README.md`](README.md) |  |
+| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=icon) | [`favicon.ico`](favicon.ico) | |
+| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=html5) | [`index.html`](index.html) | |
 
 <h2 id="license"> $\color{pink}\text{📝 License}$ </h2>
 
