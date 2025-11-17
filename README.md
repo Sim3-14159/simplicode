@@ -16,11 +16,9 @@
    ![CSS](https://img.shields.io/badge/CSS-%2347133B.svg?style=for-the-badge&logo=css&logoColor=%23ffccdd)
 </div>
 <div align="center"><hr>
-  
+
 <mark>**SIMpliCode** is an AI assisted *HTML* editor and website designer with import/export options, automatic save, and a live preview. You can export your code and chats. In the codespace, you and AI can work together at the same time, on the same code. You can see the website [here](https://Sim3-14159.github.io/simplicode).</mark>
-
 </div>
-
 
 
 
@@ -46,7 +44,13 @@
 
 ---
 
-## ✨ $\color{green}\text{Features}$
+<div align="center">
+
+#### [`✨ Features`](#features)⋅[`🛠️ Tech Stack`](#tech-stack)⋅[`🔧 How It Works`](#how-it-works)⋅[`📦 How to Run`](#how-to-run)⋅[`🗂️ File Tree`](#file-tree)⋅[`📝 License`](#license)
+</div>
+
+---
+<h2 id="features"> ✨ $\color{green}\text{Features}$</h2>
   
 - 🧠 $\color{green}\text{AI-Powered Chat Assistant}$
   
@@ -68,7 +72,7 @@
 
 ---
 
-## 🛠️ $\color{darkorange}\text{Tech Stack}$
+<h2 id="tech-stack"> 🛠️ $\color{darkorange}\text{Tech Stack}$ </h2>
 
 $\color{orange}\text{Libraries:}$
 
@@ -82,7 +86,7 @@ $\color{orange}\text{CDN Assets:}$
 
 ---
 
-## 🔧 $\color{purple}\text{How It Works}$
+<h2 id="how-it-works"> 🔧 $\color{purple}\text{How It Works}$ </h2>
   
 * User writes code in a live editor
 * User types a message or question in the chat input
@@ -92,7 +96,7 @@ $\color{orange}\text{CDN Assets:}$
 
 ---
 
-## $\color{cyan}\text{📦 How to Run}$
+<h2 id="how-to-run"> $\color{cyan}\text{📦 How to Run}$ </h2>
 
 Simply open [`index.html`](index.html) in any modern browser:
 ```bash
@@ -104,14 +108,14 @@ or, [click here](https://Sim3-14159.github.io/simplicode).
 
 ---
 
-## 🗂️ $\color{brown}\text{File Tree}$
+<h2 id="file-tree"> 🗂️ $\color{brown}\text{File Tree}$ </h2>
 
 - [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=red) 
-- [`CONTRIBUTING.md`](CONTRIBUTING.md)
-- [`LICENSE`](LICENSE)
-- [`README.md`](README.md)
-- [`favicon.ico`](favicon.ico)
-- [`index.html`](index.html)
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=red) 
+- [`LICENSE`](LICENSE) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=red) 
+- [`README.md`](README.md) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=red) 
+- [`favicon.ico`](favicon.ico) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=image&logoColor=red) 
+- [`index.html`](index.html) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=html-5&logoColor=red) 
 
-## $\color{pink}\text{📝 License}$
+<h2 id="license"> $\color{pink}\text{📝 License}$ </h2>
 $\color{pink}\text{MIT}$ — feel free to use, modify, and share.
