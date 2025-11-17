@@ -5,9 +5,9 @@
 </div>
 
 <hr>
-<p align="right">
+<!--<p align="right">
   <img src="https://img.shields.io/badge/license-MIT-%233E687A" alt="Project License Badge">
-</p>
+</p>-->
 <div align="right">
   
   ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -113,13 +113,15 @@ or, [click here](https://Sim3-14159.github.io/simplicode).
 
 <h2 id="file-tree"> 🗂️ $\color{brown}\text{File Tree}$ </h2>
 
-- [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=red) 
-- [`CONTRIBUTING.md`](CONTRIBUTING.md) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=red) 
-- [`LICENSE`](LICENSE) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=red) 
-- [`README.md`](README.md) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=red) 
-- [`favicon.ico`](favicon.ico) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=image&logoColor=red) 
-- [`index.html`](index.html) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=html-5&logoColor=red) 
+- ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=markdown&logoColor=yellow) [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
+- ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=markdown&logoColor=yellow) [`CONTRIBUTING.md`](CONTRIBUTING.md) 
+- ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=green) [`LICENSE`](LICENSE)  
+- ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme)  [`README.md`](README.md) 
+- ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=icon)  [`favicon.ico`](favicon.ico) 
+- ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=html5)  [`index.html`](index.html) 
 
 <h2 id="license"> $\color{pink}\text{📝 License}$ </h2>
+
+![](https://img.shields.io/github/license/Sim3-14159/simplicode)
 
 $\color{pink}\text{MIT}$ — feel free to use, modify, and share.
