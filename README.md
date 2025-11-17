@@ -28,6 +28,9 @@
 >
 >> #### To Do:
 >> - [ ] Get **Settings** button to work
+>> - [ ] Add accounts
+>> - [ ] Change deployment from GitHub Pages to Vercel
+>> - [ ] Enable use of virutal files so that users can create their own files (*e.g.* `<link rel="stylesheet" href="your-filename.css">`)
 >> - [ ] Add fullscreen mode for console and preview
 >> - [ ] Make sure automatic indentation keeps the cursor in the same position
 >> - [ ] Use better AI API
@@ -37,7 +40,7 @@
 >> - [ ] Get ~~**Find**, **Replace**, etc.~~ buttons above codespace to work
 >> - [ ] Let AI edit code in codespace directly
 >> - [x] Fix Code Mirror highlight color
->> - [x] Add cursor position and line number status.
+>> - [x] Add cursor position and line number status
 >> - [x] Change "New Chat" to "Reload Page"
 >> - [x] Remove unneccessary buttons above codespace
 >> - [x] Add char count
@@ -118,4 +121,5 @@ or, [click here](https://Sim3-14159.github.io/simplicode).
 - [`index.html`](index.html) ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=html-5&logoColor=red) 
 
 <h2 id="license"> $\color{pink}\text{📝 License}$ </h2>
+
 $\color{pink}\text{MIT}$ — feel free to use, modify, and share.
