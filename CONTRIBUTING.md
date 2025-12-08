@@ -22,4 +22,4 @@ Please read and follow the [Code of Conduct](./CODE_OF_CONDUCT.md). In short: be
 The documentation for **SIMpliCode** can be found in the [README](README.md) and will hopefully be accessible soon at [Sim3-14159.github.io/articles/simplicode-documentation](https://Sim3-14159.github.io/articles/simplicode-documentation) and in the `Help` section of [**SIMpliCode**](https://sim3-14159.github.io/simplicode)
 
 ## ❓Questions
-Raise an issue addressed to **@Sim3-14159**
+[Raise an issue](https://github.com/Sim3-14159/simplicode/issues/new?title=Question%20about%20SIMpliCode:...%20&body=@Sim3-14159...) addressed to **@Sim3-14159**
