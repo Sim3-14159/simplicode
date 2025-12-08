@@ -5,16 +5,19 @@
 </div>
 
 <hr>
-<!--<p align="right">
-  <img src="https://img.shields.io/badge/license-MIT-%233E687A" alt="Project License Badge">
-</p>-->
+<div>
+  <div align="left">
+  
+![Stars](https://img.shields.io/github/stars/Sim3-14159/simplicode) 
+![Forks](https://img.shields.io/github/forks/Sim3-14159/simplicode) 
+![Watchers](https://img.shields.io/github/watchers/Sim3-14159/simplicode) </div>
 <div align="right">
   
   ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
   ![MarkDown](https://img.shields.io/badge/markdown-%230A4A00.svg?style=for-the-badge&logo=markdown&logoColor=green)
   ![HTML](https://img.shields.io/badge/HTML-%23123456.svg?style=for-the-badge&logo=html5&logoColor=%2399bbff)
    ![CSS](https://img.shields.io/badge/CSS-%2347133B.svg?style=for-the-badge&logo=css&logoColor=%23ffccdd)
-</div>
+</div></div>
 <div align="center"><hr>
 
 <mark>**SIMpliCode** is an AI assisted *HTML* editor and website designer with import/export options, automatic save, and a live preview. You can export your code and chats. In the codespace, you and AI can work together at the same time, on the same code. You can see the website [here](https://Sim3-14159.github.io/simplicode).</mark>
@@ -103,9 +106,9 @@ $\color{orange}\text{CDN Assets:}$
 
 Simply open [`index.html`](index.html) in any modern browser:
 ```bash
-$ git clone https://github.com/Sim3-14159/simplicode.git
-$ cd simplicode/
-$ open index.html # or double-click to open in browser
+git clone https://github.com/Sim3-14159/simplicode.git
+cd simplicode/
+open index.html # or double-click to open in browser
 ```
 or, [click here](https://Sim3-14159.github.io/simplicode).
 
@@ -118,9 +121,9 @@ or, [click here](https://Sim3-14159.github.io/simplicode).
 | ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=markdown&logoColor=yellow) | [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | The code of conduct for contributing to **SIMpliCode** |
 | ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=markdown&logoColor=yellow) | [`CONTRIBUTING.md`](CONTRIBUTING.md) | A guide to how to contribute |
 | ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme&logoColor=green) | [`LICENSE`](LICENSE) | Copyright |
-| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme) | [`README.md`](README.md) |  |
-| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=icon) | [`favicon.ico`](favicon.ico) | |
-| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=html5) | [`index.html`](index.html) | |
+| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme) | [`README.md`](README.md) | This **README** |
+| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=icon) | [`favicon.ico`](favicon.ico) | The **SIMpliCode** icon: <img src="./favicon.ico" height="20"> |
+| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=html5) | [`index.html`](index.html) | `index.html` is where most of the action takes place; it's what will load if you visit **SIMpliCode** |
 
 <h2 id="license"> $\color{pink}\text{📝 License}$ </h2>
 
