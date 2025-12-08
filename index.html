@@ -718,11 +718,8 @@
     </div>
   </div>
 
-  <script src="https://orpheus-ai.onrender.com/wizard_orpheus.js"></script>
   <script>
-    let game = new WizardOrpheus('sk-test', 
-                                 `You are a helpful HTML/CSS/JavaScript coding assistant. You always give consice, well thought out answers. Any time you give code, you put it into a code block with a backtick (\`) or triple backtick (\`\`\`), and respond to the user. Never show the raw HTML, CSS, or JavaScript outside of a code block. If the user asks a question like "Can you do this?", then do not just give a generic answer like "Yes", but actually do the thing that they ask.`
-                                );
+    const systemPromptDefault = `You are the **SIMpliCode AI**. You are a helpful HTML, CSS, and JavaScript coding assistant. You always give concise, well thought out answers. Any time you give code, you put it into a code block with a backtick (\`) or triple backtick (\`\`\`), and respond to the user. Never show the raw HTML, CSS, or JavaScript outside of a code block. If the user asks a question like "Can you do this?", then do not just give a generic answer like "Yes", but actually do the thing that they ask. Format your responses richly.`;
 
     // Function to show thinking animation
     function showThinkingMessage() {
@@ -735,8 +732,8 @@
         <span></span>
         <span></span>
         <span></span>
-    </div>
-    `;
+      </div>
+      `;
       thinkingDiv.id = 'thinking-indicator';
       conversation.appendChild(thinkingDiv);
       conversation.parentElement.scrollTop = conversation.parentElement.scrollHeight;
@@ -751,54 +748,89 @@
       }
     }
 
-    game.createUserAction({
-      name: 'sendMessage',
-      parameters: ['Message', 'Code'],
-      howBotShouldHandle: 'Respond to the user, taking into account their current code'
+    async function sendToAI(userMessage, currentCode) {
+      const responseDiv = document.getElementById('conversation');
+      const combinedPrompt = `System: ${systemPromptDefault}\nCurrent code:\n${currentCode}\nUser: ${userMessage}`;
+
+      try {
+        const res = await fetch("https://apifreellm.com/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: combinedPrompt })
+        });
+
+        if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+
+        const data = await res.json();
+        removeThinkingMessage();
+
+        const p = document.createElement('p');
+        p.className = 'bot-message';
+
+        if (data.response && data.response.includes('429')) {
+          p.innerHTML = "Uh oh, it looks like you've reached your current limit. Please try again later.";
+        } else {
+          const html = marked.parse(data.response); // todo: sanitize with DOMPurify
+          p.innerHTML = html;
+        }
+
+        // Highlight code blocks
+        p.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightElement(block);
+        });
+
+        responseDiv.appendChild(p);
+        responseDiv.parentElement.scrollTop = responseDiv.parentElement.scrollHeight;
+
+      } catch (err) {
+        removeThinkingMessage();
+        const p = document.createElement('p');
+        p.className = 'bot-message';
+        p.innerHTML = `<div style="color: red;">Error: ${err.message || 'Something went wrong'}</div>`;
+        responseDiv.appendChild(p);
+        responseDiv.parentElement.scrollTop = responseDiv.parentElement.scrollHeight;
+      }
+    }
+
+    // --- REPLACE WizardOrpheus sendMessage calls ---
+    document.getElementById('input').addEventListener('keyup', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        let userInput = this.value.trim();
+        if (!userInput) return;
+
+        const currentCode = codeMirror.getValue();
+        showThinkingMessage();
+        sendToAI(userInput, currentCode);
+
+        const conversation = document.getElementById('conversation');
+        const pUser = document.createElement('p');
+        pUser.className = 'user-message';
+        pUser.textContent = userInput;
+        conversation.appendChild(pUser);
+        conversation.parentElement.scrollTop = conversation.parentElement.scrollHeight;
+        this.value = '';
+      }
     });
 
-    game.botAction('respond', 'Respond', { response: 'ok' }, data => {
-      removeThinkingMessage();
+    document.getElementById('send').addEventListener('click', () => {
+      const input = document.getElementById('input');
+      const userInput = input.value.trim();
+      if (!userInput) return;
+
+      showThinkingMessage();
+      sendToAI(userInput, codeMirror.getValue());
 
       const conversation = document.getElementById('conversation');
-      const p = document.createElement('p');
-      p.className = 'bot-message';
-
-      // Handle rate limit error
-      if (data.response && data.response.includes('429')) {
-        p.innerHTML = "Uh oh, it looks like you've reached your current limit. Please try again later.";
-      } else {
-        // Parse Markdown to HTML
-        const html = marked.parse(data.response); // todo: sanitize with DOMPurify
-        p.innerHTML = html;
-      }
-
-      // Highlight code blocks
-      p.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightElement(block);
-      });
-
-      conversation.appendChild(p);
+      const pUser = document.createElement('p');
+      pUser.className = 'user-message';
+      pUser.textContent = userInput;
+      conversation.appendChild(pUser);
       conversation.parentElement.scrollTop = conversation.parentElement.scrollHeight;
+      input.value = '';
     });
 
-    // Listen for errors from the API
-    game.onError = function(error) {
-      removeThinkingMessage();
-
-      const conversation = document.getElementById('conversation');
-      const p = document.createElement('p');
-      p.className = 'bot-message';
-
-      if (error.status === 429) {
-        p.innerHTML = "<div style='color: red;'>Uh oh, it looks like you've reached your current limit. Please try again later.</div>";
-      } else {
-        p.innerHTML = `<div style="color: red;">Error: ${error.message || 'Something went wrong'}</div>`;
-      }
-
-      conversation.appendChild(p);
-      conversation.parentElement.scrollTop = conversation.parentElement.scrollHeight;
-    };
+    // --- ORIGINAL SCRIPT BELOW (unchanged) ---
 
     // Resizable functionality - improved and fixed
     let isResizingHorizontal = false;
@@ -845,7 +877,7 @@
         const containerRect = document.querySelector('.main-container').getBoundingClientRect();
         const titleHeight = document.querySelector('.title').offsetHeight + 40;
 
-        const totalHeight = window.innerHeight - titleHeight - 20; // Account for padding
+        const totalHeight = window.innerHeight - titleHeight - 20;
         const mouseY = e.clientY - titleHeight - 20;
 
         let bottomPercentage = (mouseY / totalHeight) * 100;
@@ -862,36 +894,10 @@
       document.body.style.cursor = 'default';
     });
 
-    // Also reset on mouse leaving the window (in case mouseup outside)
     document.addEventListener('mouseleave', () => {
       isResizingHorizontal = false;
       isResizingVertical = false;
       document.body.style.cursor = 'default';
-    });
-
-    document.getElementById('input').addEventListener('keyup', function (e) {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        let userInput = this.value.trim();
-        if (!userInput) return;
-
-        // Get the current code from CodeMirror
-        const currentCode = codeMirror.getValue();
-
-        // Show thinking animation
-        showThinkingMessage();
-
-        // Send both the message and the code
-        game.sendMessage(userInput, currentCode); 
-
-        const conversation = document.getElementById('conversation');
-        const pUser = document.createElement('p');
-        pUser.className = 'user-message';
-        pUser.textContent = userInput;
-        conversation.appendChild(pUser);
-        conversation.parentElement.scrollTop = conversation.parentElement.scrollHeight;
-        this.value = '';
-      }
     });
 
     // Initialize CodeMirror
@@ -909,7 +915,6 @@
       viewportMargin: Infinity,
       smartIndent: true
     });
-
 
     codeMirror.on("cursorActivity", function(instance) {
       const cursor = instance.doc.getCursor();
@@ -945,39 +950,12 @@
         }
 
         document.getElementById("favicon-img").src = faviconUrl;
-
       };
 
       saveData();
     });
 
-
     loadData();
-
-
-
-    document.getElementById('send').addEventListener('click', () => {
-      const input = document.getElementById('input');
-      const userInput = input.value.trim();
-      if (!userInput) return;
-
-      // Show thinking animation
-      showThinkingMessage();
-
-      // Send both message and current code
-      game.sendMessage(userInput, codeMirror.getValue());
-
-      // Add user message to chat
-      const conversation = document.getElementById('conversation');
-      const pUser = document.createElement('p');
-      pUser.className = 'user-message';
-      pUser.textContent = userInput;
-      conversation.appendChild(pUser);
-      conversation.parentElement.scrollTop = conversation.parentElement.scrollHeight;
-
-      // Clear input
-      input.value = '';
-    });
 
     const toggleBtn = document.getElementById('sidebarToggle');
     const sidebar = document.getElementById('sidebar');
@@ -987,7 +965,7 @@
     toggleBtn.addEventListener('click', () => {
       sidebar.classList.toggle('open');
 
-      rotation += 360; // Always rotate clockwise
+      rotation += 360;
       toggleBtn.style.transform = `rotate(${rotation}deg)`;
     });
 
@@ -998,8 +976,8 @@
 
     function closePopup() {
       document.getElementById("popup").style.display = "none";
-      document.getElementById("popup-input").value = ""; // Clear input
-      document.getElementById("notificationMessage").textContent = ""; // Clear notification
+      document.getElementById("popup-input").value = "";
+      document.getElementById("notificationMessage").textContent = "";
     }
 
     function downloadCode() {
@@ -1021,12 +999,10 @@
       closePopup();
     }
 
-
     function downloadChat() {
       const conversation = document.getElementById('conversation');
       const messages = conversation.querySelectorAll('p');
 
-      // Start the RTF content
       let rtfContent = `{\\rtf1\\ansi\\deff0\n`;
 
       messages.forEach((msg) => {
@@ -1039,7 +1015,7 @@
         }
       });
 
-      rtfContent += `}`; // Close the RTF
+      rtfContent += `}`;
 
       if (rtfContent === '{\\rtf1\\ansi\\deff0\n}') {
         alert("There is nothing in the chat!");
@@ -1072,7 +1048,6 @@
         } else if (char === '}') {
           rtf += '\\}';
         } else if (code > 127) {
-          // Unicode character: use \uN? syntax
           rtf += `\\u${code}?`;
         } else if (char === '\n') {
           rtf += '\\line\n';
@@ -1084,13 +1059,11 @@
       return rtf;
     }
 
-    // Save data to localStorage
     function saveData() {
       const input = codeMirror.getValue();
       localStorage.setItem('myData', input);
     }
 
-    // Load data from localStorage
     function loadData() {
       const storedData = localStorage.getItem('myData');
       codeMirror.setValue(storedData ? storedData : `<!--Welcome to the codespace! Write your code here and the AI will be able to help you with it! This is some example HTML to get you started.-->
@@ -1113,11 +1086,9 @@
     </html>`);
     }
 
-    //  loadData();
-
     function reloadPreview() {
       previewContainer.srcdoc = codeMirror.getValue();
     }
-  </script>
+</script>
   </body>
 </html>
