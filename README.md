@@ -30,23 +30,22 @@
 >
 >
 >> #### To Do:
->> - [ ] Get **Settings** button to work
+>> - [ ] Get ~~**Settings** button~~ menubar buttons to work
 >> - [ ] Add accounts
 >> - [ ] Change deployment from GitHub Pages to Vercel
 >> - [ ] Enable use of virutal files so that users can create their own files (*e.g.* `<link rel="stylesheet" href="your-filename.css">`)
->> - [ ] Add fullscreen mode for console and preview
+>> - [ ] Add fullscreen mode for ~~console and~~ preview
 >> - [ ] Make sure automatic indentation keeps the cursor in the same position
 >> - [ ] Use better AI API
 >> - [ ] Add console
->> - [ ] Make all buttons in sidebar work
+>> - [ ] Move buttons from sidebar to menubar.
+>> - [ ] Make all buttons in ~~sidebar~~ menubar work
 >> - [ ] Sanitize output from AI 
 >> - [ ] Get ~~**Find**, **Replace**, etc.~~ buttons above codespace to work
 >> - [ ] Let AI edit code in codespace directly
->> - [x] Fix Code Mirror highlight color
->> - [x] Add cursor position and line number status
->> - [x] Change "New Chat" to "Reload Page"
->> - [x] Remove unneccessary buttons above codespace
->> - [x] Add char count
+>> - [x] Add menubar
+>>       
+>> …
 
 ---
 
