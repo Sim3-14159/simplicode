@@ -34,16 +34,17 @@
 >> - [ ] Add accounts
 >> - [ ] Change deployment from GitHub Pages to Vercel
 >> - [ ] Enable use of virutal files so that users can create their own files (*e.g.* `<link rel="stylesheet" href="your-filename.css">`)
->> - [ ] Add fullscreen mode for ~~console and~~ preview
 >> - [ ] Make sure automatic indentation keeps the cursor in the same position
->> - [ ] Use better AI API
+>> - [ ] Use better AI API (sort of fixed)
 >> - [ ] Add console
 >> - [ ] Move buttons from sidebar to menubar.
 >> - [ ] Make all buttons in ~~sidebar~~ menubar work
->> - [ ] Sanitize output from AI 
 >> - [ ] Get ~~**Find**, **Replace**, etc.~~ buttons above codespace to work
 >> - [ ] Let AI edit code in codespace directly
 >> - [x] Add menubar
+>> - [x] Add fullscreen mode for ~~console and~~ preview
+>> 
+>> &ensp;<sup><sub>:x:</sub></sup>&ensp;~~Sanitize output from AI~~
 >>       
 >> …
 
