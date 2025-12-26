@@ -625,7 +625,7 @@ nav.options-menubar button {
 }
 
 nav.options-menubar button:hover {
-  background: #999;
+  background: #aaa;
 }
 
 nav.options-menubar button img {
@@ -688,11 +688,12 @@ nav.options-menubar li ul a {
   padding: 8px 12px;
   text-decoration: none;
   color: #000;
-  background: #999;
+  background: rgba(119, 119, 119, 0.2);
   font-family: sans-serif;
   font-size: 10px;
   white-space: nowrap;
   transition: background 0.2s;
+  border-radius: 5px;
 }
 
 nav.options-menubar li ul a:hover {
