@@ -116,7 +116,7 @@ or, [click here](https://Sim3-14159.github.io/simplicode).
 
 <h2 id="file-tree"> 🗂️ $\color{brown}\text{File Tree}$ </h2>
 
-| Icon | Name | Description |
+| Type | Name | Description |
 |:---|:---|:-----|
 | ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=markdown&logoColor=yellow) | [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | The code of conduct for contributing to **SIMpliCode** |
 | ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=markdown&logoColor=yellow) | [`CONTRIBUTING.md`](CONTRIBUTING.md) | A guide to how to contribute |
@@ -124,6 +124,10 @@ or, [click here](https://Sim3-14159.github.io/simplicode).
 | ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=readme) | [`README.md`](README.md) | This **README** |
 | ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=icon) | [`favicon.ico`](favicon.ico) | The **SIMpliCode** icon: <img src="./favicon.ico" height="20"> |
 | ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=html5) | [`index.html`](index.html) | `index.html` is where most of the action takes place; it's what will load if you visit **SIMpliCode** |
+| ![](https://img.shields.io/badge/_-ffffff?style=flat&logo=css&logoColor=blue) | [`style.css`](style.css) | Styles `index.html` |
+| ![](https://img.shields.io/badge/📁-ffffff?style=flat) | [`assets/`](assets/) | Contains most of the site assets |
+|| ![](https://img.shields.io/badge/🖼️-ffffff?style=flat) | [`assets/og-image.png`](assets/og-image.png) • When you send a link on social platforms, this image will pop up |
+
 
 <h2 id="license"> $\color{pink}\text{📝 License}$ </h2>
 
