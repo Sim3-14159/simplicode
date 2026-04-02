@@ -1,3 +1,8 @@
+> [!NOTE]
+> **SIMpliCode** is not being actively developed right now.
+
+
+
 <div align="center">
 <h1> $$\color{blue}{\text{SIMpliCode}}$$ </h1>
   
